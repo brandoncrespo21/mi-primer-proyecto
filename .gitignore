@@ -1,0 +1,16 @@
+# Entorno virtual
+venv/
+env/
+
+# Cache de Python
+__pycache__/
+*.pyc
+
+# Base de datos generada (no se sube, se genera sola al ejecutar la app)
+clientes.db
+
+# Archivos de configuracion del editor
+.vscode/
+
+# Logs
+*.log
