@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS clientes (
     fecha_registro TEXT DEFAULT (datetime('now','localtime'))
 );
  
--- Notas de diseno:
+-- Notas de diseño:
 -- id: clave primaria autoincremental
 -- nombre: obligatorio
 -- dni: obligatorio y unico (evita clientes duplicados)
