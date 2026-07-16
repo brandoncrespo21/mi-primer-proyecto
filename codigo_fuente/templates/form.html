@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>{{ accion }} cliente</h3>
+
+<form method="post" class="row g-3 mt-2">
+    <div class="col-md-6">
+        <label class="form-label">Nombre completo *</label>
+        <input type="text" name="nombre" class="form-control"
+               value="{{ cliente.nombre if cliente else '' }}" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">DNI *</label>
+        <input type="text" name="dni" class="form-control"
+               value="{{ cliente.dni if cliente else '' }}" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Teléfono</label>
+        <input type="text" name="telefono" class="form-control"
+               value="{{ cliente.telefono if cliente else '' }}">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Correo</label>
+        <input type="email" name="correo" class="form-control"
+               value="{{ cliente.correo if cliente else '' }}">
+    </div>
+    <div class="col-12">
+        <label class="form-label">Dirección</label>
+        <input type="text" name="direccion" class="form-control"
+               value="{{ cliente.direccion if cliente else '' }}">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+{% endblock %}
