@@ -53,9 +53,9 @@ def editar(cliente_id):
         telefono = request.form.get("telefono", "").strip()
         correo = request.form.get("correo", "").strip()
         direccion = request.form.get("direccion", "").strip()
-    if not dni.isdigit() or len(dni) != 8:
-        flash("El DNI debe tener exactamente 8 numeros.", "danger")
-        return redirect(url_for("registrar"))
+        if not dni.isdigit() or len(dni) != 8:
+            flash("El DNI debe tener exactamente 8 numeros.", "danger")
+            return redirect(url_for("editar", cliente_id=cliente_id))
 
         db.actualizar_cliente(cliente_id, nombre, dni, telefono, correo, direccion)
         flash("Cliente actualizado correctamente.", "success")
